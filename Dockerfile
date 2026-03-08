@@ -15,7 +15,7 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install production dependencies only
-RUN npm ci --only=production --ignore-scripts && \
+RUN npm install --omit=dev --ignore-scripts && \
     npm cache clean --force
 
 # ================================
